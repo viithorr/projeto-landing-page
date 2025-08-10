@@ -1,0 +1,192 @@
+*{
+    margin: 0px;
+    font-family: "inter-variable", sans-serif;
+
+}
+
+
+  /* MENU SUPERIOR*/
+#logo{
+
+    width: 125px;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+
+#titulo-menusuperior{
+    margin-top: 75px;
+    margin-left: 150px;
+    font-size: 40px;
+}
+
+#texto-menusuperior{
+     margin-top: 45px;
+    margin-left: 150px;
+   padding-bottom: 100px;
+   font-size: 20px;
+}
+
+
+#menusuperior{
+      background-image: url(./imagens/fundo-menusuperior.svg);
+    color: white;
+}
+
+
+
+
+
+
+  /* MENU INFORMACIONAL*/
+#menuinformacional{
+    background-color:#EAECE5;
+    display: grid;
+    grid-auto-flow: column;
+    columns: auto;
+    font-size: 20px;
+}
+
+
+
+#secaovideo{
+display: grid;
+grid-auto-flow: column;
+columns: auto;
+}
+
+
+
+.icone{
+   margin: 50px 0px 50px 100px;
+   padding: 15px;
+}
+
+
+.textoinformativo{
+ display: flex;
+ align-items: center;
+}
+
+
+#titulovideo{
+    color: #247BA0;
+    margin-top: 100px;
+    font-size: 40px;
+}
+
+
+.texto-secaovideo{
+
+    padding-right: 300px;
+}
+
+
+#video{
+    margin-top: 100px;
+    margin-left: 150px;
+    margin-bottom: 100px;
+}
+
+
+
+
+ /* SEÇÃO CARROSSEL */
+#secaocarrossel{
+  background-color:#247BA0;
+  padding:50px 0;
+}
+
+#titulocarrossel{
+  color:#fff;
+  text-align:center;
+  font-size:32px;
+  margin-bottom:40px;
+}
+
+/* Linha do carrossel */
+#div-cards{
+  position:relative;
+  max-width:1160px;          /* largura parecida com a do layout */
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;    /* centraliza os cards */
+  gap:40px;                  /* espaçamento entre os cards */
+  padding:0 64px;            /* espaço interno para as setas */
+}
+
+/* Cartões */
+.card{
+  flex:0 0 520px;            /* largura fixa do card */
+  width:520px;
+  display:block;             /* evita espaço extra abaixo da imagem */
+  border-radius:12px;        /* opcional, caso seu SVG não tenha */
+  margin:0;                  /* remove o deslocamento */
+
+}
+
+/* Setas (não interferem no layout) */
+.seta{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  cursor:pointer;
+}
+
+#seta-esquerda{ left:20px; display:none; }
+#seta-direita{  right:20px; }
+
+.seta:hover{
+  transform:translateY(-50%) translateY(-7px);
+  transition:transform .3s ease;
+}
+
+
+
+#titulo-formulario{
+    font-size: 32px;
+    text-align: center;
+    color: #383838;
+}
+
+#secaoformulario{
+    padding: 50px;
+}
+
+
+
+
+#form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    gap: 8px;
+}
+
+#form input {
+    width: 300px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #ECEEE8; /* cor de fundo semelhante à da imagem */
+    font-size: 16px;
+}
+
+#form button {
+    width: 300px;
+    padding: 12px;
+    background-color: #247C97; /* cor azul do botão */
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#form button:hover {
+    background-color: #1f6c84; /* cor levemente mais escura no hover */
+}
+
+
