@@ -1,0 +1,308 @@
+/* =========================
+   RESET BÁSICO + TIPOGRAFIA
+   ========================= */
+* {
+  margin: 0px;
+  font-family: "inter-variable", sans-serif;
+}
+
+/* =========================
+   SEÇÃO: MENU SUPERIOR (Hero)
+   ========================= */
+#logo {
+  width: 125px;
+  margin-left: 50px;
+  margin-top: 50px;
+}
+
+#titulo-menusuperior {
+  margin-top: 75px;
+  margin-left: 150px;
+  font-size: 40px;
+}
+
+#texto-menusuperior {
+  margin-top: 45px;
+  margin-left: 150px;
+  padding-bottom: 100px;
+  font-size: 20px;
+}
+
+#menusuperior {
+  background-image: url(./imagens/fundo-menusuperior.svg);
+  color: white;
+}
+
+/* =========================
+   SEÇÃO: MENU INFORMACIONAL
+   - Ícones + texto lado a lado
+   ========================= */
+#menuinformacional {
+  background-color: #EAECE5;
+  display: grid;
+  grid-auto-flow: column;
+  font-size: 20px;
+}
+
+.icone {
+  margin: 50px 0px 50px 100px;
+  padding: 15px;
+}
+
+.textoinformativo {
+  display: flex;
+  align-items: center;
+}
+
+/* =========================
+   SEÇÃO: VÍDEO + DESCRIÇÃO
+   ========================= */
+#secaovideo {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+#titulovideo {
+  color: #247BA0;
+  margin-top: 100px;
+  font-size: 40px;
+}
+
+.texto-secaovideo {
+  padding-right: 300px;
+}
+
+#video {
+  margin-top: 100px;
+  margin-left: 150px;
+  margin-bottom: 100px;
+}
+
+/* =========================
+   SEÇÃO: CARROSSEL DE DEPOIMENTOS
+   ========================= */
+#secaocarrossel {
+  background-color: #247BA0;
+  padding: 50px 0;
+}
+
+#titulocarrossel {
+  color: #fff;
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+/* Container dos cards */
+#div-cards {
+  position: relative;
+  max-width: 1160px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 0 64px;
+}
+
+/* Card individual */
+.card {
+  flex: 0 0 520px;
+  width: 520px;
+  display: block;
+  border-radius: 12px;
+  margin: 0;
+}
+
+/* Setas de navegação */
+.seta {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+#seta-esquerda { left: 20px; }
+#seta-direita { right: 20px; }
+
+.seta:hover {
+  transform: translateY(-50%) translateY(-7px);
+  transition: transform .3s ease;
+}
+
+/* =========================
+   SEÇÃO: FORMULÁRIO DE CAPTURA
+   ========================= */
+#titulo-formulario {
+  font-size: 32px;
+  text-align: center;
+  color: #383838;
+}
+
+#secaoformulario {
+  padding: 50px;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+  gap: 8px;
+}
+
+#form input {
+  width: 300px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ECEEE8;
+  font-size: 16px;
+}
+
+#form button {
+  width: 300px;
+  padding: 12px;
+  background-color: #247C97;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#form button:hover {
+  background-color: #1f6c84;
+}
+
+/* Utilitário para ocultar elementos (ex.: cards do carrossel) */
+.is-hidden {
+  display: none !important;
+}
+
+
+
+
+
+
+/* =========
+   RESPONSIVO
+   ========= */
+
+/* Tablets e notebooks médios (≤ 992px) */
+@media (max-width: 992px) {
+  /* Hero */
+  #titulo-menusuperior {
+    font-size: 36px;
+    margin-left: 0;
+    text-align: center;
+  }
+  #texto-menusuperior {
+    font-size: 18px;
+    margin-left: 0;
+    text-align: center;
+    padding-bottom: 60px;
+  }
+  #menusuperior {
+    padding: 0 24px;
+  }
+
+  /* Vídeo + texto */
+  #secaovideo {
+    grid-auto-flow: row;
+    row-gap: 24px;
+    padding: 0 24px;
+  }
+  #titulovideo { font-size: 34px; margin-top: 0; }
+  .texto-secaovideo { padding-right: 0; }
+  #video {
+    margin: 32px auto 16px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  /* Carrossel */
+  #div-cards {
+    max-width: 760px;
+    gap: 28px;
+    padding: 0 32px;
+  }
+  .card {
+    flex-basis: 520px;
+    width: 100%;
+  }
+
+  /* Formulário */
+  #secaoformulario { padding: 40px 24px; }
+  #form input, #form button { width: 100%; max-width: 520px; }
+}
+
+/* Mobile grande (≤ 768px) */
+@media (max-width: 768px) {
+  /* Hero */
+  #logo { margin-left: 24px; margin-top: 24px; width: 110px; }
+  #titulo-menusuperior { font-size: 30px; }
+  #texto-menusuperior { font-size: 16px; }
+
+  /* Menu informacional em coluna */
+  #menuinformacional {
+    grid-auto-flow: row;
+    padding: 16px 24px 8px;
+    row-gap: 8px;
+    font-size: 18px;
+  }
+  .icone { margin: 0 12px 0 0; padding: 8px; }
+  .textoinformativo { justify-content: flex-start; }
+
+  /* Vídeo + texto */
+  #titulovideo { font-size: 28px; }
+  #video { margin: 16px 0; }
+
+  /* Carrossel empilhado (limpo para celular) */
+  #titulocarrossel { font-size: 26px; margin-bottom: 24px; }
+  #div-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 0 20px;
+  }
+  .card {
+    flex: 0 0 auto;
+    width: 92vw;        /* ocupa a largura da tela com bordas */
+    max-width: 520px;
+  }
+  /* Oculta setas no mobile para layout mais limpo */
+  .seta { display: none; }
+
+  /* Formulário */
+  #titulo-formulario { font-size: 26px; }
+  #form { padding-top: 16px; gap: 10px; }
+  #form input, #form button { max-width: 480px; }
+}
+
+/* Mobile pequeno (≤ 480px) */
+@media (max-width: 480px) {
+  /* Hero */
+  #titulo-menusuperior { font-size: 24px; }
+  #texto-menusuperior { font-size: 15px; padding-bottom: 36px; }
+  #menusuperior { padding-bottom: 12px; }
+
+  /* Informacional */
+  #menuinformacional { font-size: 16px; }
+
+  /* Vídeo + texto */
+  #titulovideo { font-size: 24px; }
+  .texto-secaovideo { font-size: 15px; }
+
+  /* Carrossel */
+  #titulocarrossel { font-size: 22px; }
+  .card { width: 94vw; }
+
+  /* Formulário */
+  #secaoformulario { padding: 32px 16px; }
+  #form input, #form button { max-width: 420px; }
+}
+
+/* Utilitário já existente — mantido para o carrossel */
+.is-hidden { display: none !important; }

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- CSS principal do projeto -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Fonte (Adobe Fonts / Typekit) -->
+  <link rel="stylesheet" href="https://use.typekit.net/hyd8ebt.css" />
+
+  <title>Escola DNC</title>
+</head>
+<body>
+
+  <!-- =========================
+       SEÇÃO: Hero / Menu Superior
+       - Fundo com imagem (fundo-menusuperior.svg)
+       - Logo clicável e CTA textual (headline + subtítulo)
+       ========================= -->
+  <div id="menusuperior">
+    <!-- Logo da DNC com link externo -->
+    <a href="https://www.escoladnc.com.br/">
+      <img src="./imagens/logo.svg" id="logo" alt="" />
+    </a>
+
+    <!-- Headline principal do hero -->
+    <h1 id="titulo-menusuperior">
+      Dê os primeiros passos da <br />
+      sua carreira em Tecnologia
+    </h1>
+
+    <!-- Subheadline / descrição curta -->
+    <p id="texto-menusuperior">
+      Inscreva-se no curso gratuito de Introdução à <br />
+      Tecnologia da DNC School e aprenda os principais <br />
+      fundamentos para construir experiências efetivas.
+    </p>
+  </div>
+
+  <!-- =========================
+       SEÇÃO: Menu Informacional
+       - Três “pílulas” com ícone + texto
+       ========================= -->
+  <div id="menuinformacional">
+    <p class="textoinformativo">
+      <img src="Icones/certificado.svg" class="icone" alt="" />Certificado de conclusão
+    </p>
+
+    <p class="textoinformativo">
+      <img src="Icones/relogio.svg" class="icone" alt="" /> 4 horas de conteúdo
+    </p>
+
+    <p class="textoinformativo">
+      <img src="Icones/camera.svg" class="icone" alt="" /> Aulas online gravadas
+    </p>
+  </div>
+
+  <!-- =========================
+       SEÇÃO: Vídeo + Cópia
+       - Vídeo do YouTube responsivo ao lado do texto
+       - Título e parágrafos explicativos
+       ========================= -->
+  <div id="secaovideo">
+    <!-- Vídeo incorporado do YouTube -->
+    <iframe
+      id="video"
+      width="640"
+      height="360"
+      src="https://www.youtube.com/embed/ITxGkd9h4n4"
+      title="DNC - A escola inovadora que forma profissionais de alta perfomance"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+
+    <!-- Bloco de texto (headline + copy) -->
+    <div>
+      <h1 class="texto-secaovideo" id="titulovideo">
+        Aprenda com especialistas e <br />
+        comece seu primeiro projeto
+      </h1>
+      <br /><br />
+
+      <p class="texto-secaovideo" id="textovideo">
+        Conheça o processo de desenvolvimento e entenda como utilizar <br />
+        os principais métodos e ferramentas da área para resolver <br />
+        problemas complexos. <br /><br />
+
+        Conquiste seu certificado e desenvolva um projeto prático para <br />
+        aplicar seus conhecimentos.
+      </p>
+    </div>
+  </div>
+
+  <!-- =========================
+       SEÇÃO: Carrossel de Depoimentos
+       - Dois cards visíveis por vez
+       - Estado inicial: Leonardo + Samantha
+       - Bruna começa oculta; navegação pelas setas
+       ========================= -->
+  <div id="secaocarrossel">
+    <h1 id="titulocarrossel">Mais de 500 alunos já iniciaram seus estudos</h1>
+
+    <!-- Trilho do carrossel (layout flex no CSS) -->
+    <div id="div-cards">
+      <!-- Navegação: seta esquerda (inicialmente oculta via .is-hidden) -->
+      <img
+        id="seta-esquerda"
+        class="seta is-hidden"
+        src="./Icones/seta-esquerda.svg"
+        alt="voltar"
+        onclick="RolarParaEsquerda()"
+      />
+
+      <!-- Cards (imagens SVG) -->
+      <!-- Leonardo: visível no estado inicial -->
+      <img id="leonardo" class="card" src="./Cards/leonardo.svg" alt="Leonardo" />
+
+      <!-- Samantha: sempre visível; é a “par” fixa do slide -->
+      <img id="samantha" class="card" src="./Cards/samantha.svg" alt="Samantha" />
+
+      <!-- Bruna: começa oculta e aparece ao avançar para a direita -->
+      <img id="bruna" class="card is-hidden" src="./Cards/bruna.svg" alt="Bruna" />
+
+      <!-- Navegação: seta direita (visível no estado inicial) -->
+      <img
+        id="seta-direita"
+        class="seta"
+        src="./Icones/seta-direita.svg"
+        alt="avançar"
+        onclick="RolarParaDireita()"
+      />
+    </div>
+  </div>
+
+  <!-- =========================
+       SEÇÃO: Formulário de Conversão
+       - Integração com SheetMonkey via atributo action
+       - Após o submit, o serviço pode redirecionar (configurado no painel)
+       ========================= -->
+  <div id="secaoformulario">
+    <h1 id="titulo-formulario">
+      Comece agora mesmo e dê o próximo passo da sua carreira
+    </h1>
+
+    <!--
+      Observação:
+      - action envia os dados ao endpoint do SheetMonkey
+      - name dos inputs seguem os campos esperados pela API
+    -->
+    <form
+      action="https://api.sheetmonkey.io/form/aCJpfY94RkbvKfv1jh7ZJD"
+      method="post"
+      id="form"
+    >
+      <input type="text" placeholder="Nome" name="Name" required /><br />
+      <input type="email" placeholder="E-mail" name="Email" required /><br />
+      <input type="text" placeholder="Telefone" name="Phone" /><br />
+
+      <!-- Campo oculto: timestamp automático gerado pelo SheetMonkey -->
+      <input
+        type="hidden"
+        name="Created"
+        value="x-sheetmonkey-current-date-time"
+      />
+
+      <!-- CTA: envia o formulário -->
+      <button type="submit">Acesse a ementa grátis</button>
+    </form>
+  </div>
+
+  <!-- Script do carrossel (funções de navegação das setas) -->
+  <script src="index.js"></script>
+</body>
+</html>
